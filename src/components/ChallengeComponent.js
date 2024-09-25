@@ -20,11 +20,9 @@ class ChallengeComponent extends Component {
    * (To anyone curious, I'm just following the React code for this tutorial. I will produce a cleaned up version)
    */
   
-  componentDidMount(): void {
-    console.log(this.state)
+  componentDidMount() {
     ApiClient.challenge().then(
       res => {
-        console.log("BANG")
         if(res.ok) {
           res.json().then(json => {
             this.setState({
@@ -63,7 +61,7 @@ class ChallengeComponent extends Component {
         }
     })
   }
-  updateMessage(m: string) {
+  updateMessage(m) {
     this.setState({
       message: m
     });
